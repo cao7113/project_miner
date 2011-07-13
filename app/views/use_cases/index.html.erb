@@ -1,0 +1,34 @@
+<%= content_for :sitemap do %>
+<span class="current">列表</span>
+<% end %>
+<%= render 'base' %>
+<div class="tools">
+  <a href="<%= use_cases_path %>" class="button">全部</a>
+  <a href="<%= new_use_case_path %>" class="button">新建</a>
+</div>
+
+<div id="use_cases">
+  <%= grid(@use_cases, :show_filters => :always) do |g|
+    g.column :column_name => '', :attribute_name => 'id', :no_filter => true
+    	    
+		   g.column :column_name => 'Title', :attribute_name => 'title'
+			   
+		    
+		   g.column :column_name => 'Description', :attribute_name => 'description'
+			   
+		    
+		  
+		  g.column :column_name => 'User', :attribute_name => 'user_id'
+			   
+		    
+		   g.column :column_name => 'Note', :attribute_name => 'note'
+			   
+	    g.column :column_name => '创建时间', :attribute_name => 'created_at'
+    g.column :column_name => '操作' do |c|
+      raw "#{link_to '修改', edit_use_case_path(c.id)}
+      #{link_to '删除', use_case_path(c.id), :method => :delete, :confirm => '确定要删除吗?'}"
+    end
+  end %>
+</div>
+
+

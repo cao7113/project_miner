@@ -1,0 +1,26 @@
+<%= content_for :sitemap do %>
+<span class="current">查看</span>
+<% end %>
+<%= render 'base' %>
+<div class="tools">
+  <%= link_to '修改', edit_use_case_path(@use_case) %> |
+  <%= link_to '返回', use_cases_path %>
+</div>
+<div id="use_case">
+    <p>
+    <b>Title:</b>
+    <%= @use_case.title %>
+  </p>
+    <p>
+    <b>Description:</b>
+    <%= @use_case.description %>
+  </p>
+    <p>
+    <b>User:</b>
+    <%= @use_case.user %>
+  </p>
+    <p>
+    <b>Note:</b>
+    <%= @use_case.note %>
+  </p>
+  </div>

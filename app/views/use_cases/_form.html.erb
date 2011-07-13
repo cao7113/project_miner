@@ -1,0 +1,22 @@
+<div id="use_case" class="form">
+<%= simple_form_for(@use_case, 
+  :url => (@use_case.id.blank? ? use_cases_path : use_case_path(@use_case)) ) do |f| %>
+
+  <div class="inputs">
+    
+		    
+			  <%= f.input :title, :placeholder=>'Title ...', :label=>false %>
+			
+    
+		    
+			  <%= f.input :description, :placeholder=>'Description ...', :label=>false, :input_html=>{:rows=>10, :cols=>80} %>
+			
+		    
+			  <%= f.input :note, :placeholder=>'Note ...', :label=>false %>
+			
+  </div>
+  <div class="actions">
+    <%= f.submit "提交", :class => "button" %> &nbsp; <%= link_to '返回', use_cases_path %>
+  </div>
+<% end %>
+</div>

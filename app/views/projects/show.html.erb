@@ -1,0 +1,38 @@
+<%= content_for :sitemap do %>
+<span class="current">查看</span>
+<% end %>
+<%= render 'base' %>
+<div class="tools">
+  <%= link_to '修改', edit_project_path(@project) %> |
+  <%= link_to '返回', projects_path %>
+</div>
+<div id="project">
+    <p>
+    <b>Name:</b>
+    <%= @project.name %>
+  </p>
+    <p>
+    <b>Summary:</b>
+    <%= @project.summary %>
+  </p>
+    <p>
+    <b>Content:</b>
+    <%= @project.content %>
+  </p>
+    <p>
+    <b>Status:</b>
+    <%= @project.status %>
+  </p>
+    <p>
+    <b>Begin at:</b>
+    <%= @project.begin_at %>
+  </p>
+    <p>
+    <b>User:</b>
+    <%= @project.user %>
+  </p>
+    <p>
+    <b>Trace:</b>
+    <%= @project.trace %>
+  </p>
+  </div>

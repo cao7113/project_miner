@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ProjectMiner</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <!--wice grid-->
+  <%= include_wice_grid_assets(:include_calendar => true) %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<div id="nav">
+	<%=link_to "Index", root_path%> |
+	<%=link_to "Projects", projects_path%> |
+	<%=link_to "UseCases", use_cases_path%> |
+	<%=link_to "NewCase", new_use_case_path%> |
+	<span>
+		<%if current_user %>	
+		  <%=link_to current_user.name, "#{UC_PROVIDER_URL}/profile/edit", :title=>"Edit profile"%> |
+		  <%=link_to "Sign out", sign_out_path %>  |
+		<%else%>
+		  <%=link_to "Sign in", "#{UC_PROVIDER_URL}/sign_in" %>  |
+		  <%=link_to "Sign up", "#{UC_PROVIDER_URL}/sign_up" %>  |
+		<%end%>		
+	</span>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

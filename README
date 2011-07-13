@@ -1,0 +1,12 @@
+#==Welcome to project miner
+Sometime I need tools to assist project building process, but I can't find a suitable one.
+Thanks to rails power, I easily make some for myself. Let's cultivate it gradually together...
+
+Some functions as follows:
+* make a project
+* Use case list for a project
+
+
+Some notes:
+* maybe complement with Redmine prject
+* borrow some thoughts from UML design and Axure(requirement prototype tool)
