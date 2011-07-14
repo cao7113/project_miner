@@ -21,6 +21,10 @@ gem 'acts-as-taggable-on', '2.0.6'
 #for comment in db
 gem 'acts_as_commentable', '3.0.1'
 
+
+#==debugger
+gem "ruby-debug"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

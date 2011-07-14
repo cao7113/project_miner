@@ -10,3 +10,8 @@ Some functions as follows:
 Some notes:
 * maybe complement with Redmine prject
 * borrow some thoughts from UML design and Axure(requirement prototype tool)
+
+
+Background:
+  Present project management tools mainly focus souce code, tasks and time management. They
+should complemnet with some social characteristics and some process management.

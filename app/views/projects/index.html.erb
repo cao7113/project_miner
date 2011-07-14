@@ -15,23 +15,11 @@
 			   
 		    
 		   g.column :column_name => 'Summary', :attribute_name => 'summary'
-			   
-		    
-		   g.column :column_name => 'Content', :attribute_name => 'content'
-			   
-		    
 		   g.column :column_name => 'Status', :attribute_name => 'status'
 			   
 		    
 		   g.column :column_name => 'Begin at', :attribute_name => 'begin_at'
-			   
-		    
-		  
-		  g.column :column_name => 'User', :attribute_name => 'user_id'
-			   
-		    
-		   g.column :column_name => 'Trace', :attribute_name => 'trace'
-			   
+		   g.column :column_name => 'Trace', :attribute_name => 'trace'			   
 	    g.column :column_name => '创建时间', :attribute_name => 'created_at'
     g.column :column_name => '操作' do |c|
       raw "#{link_to '修改', edit_project_path(c.id)}

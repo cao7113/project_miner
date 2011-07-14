@@ -17,12 +17,15 @@ class ApplicationController < ActionController::Base
           render :json => { 'error' => 'Access Denied' }.to_json
         }
       end
+    else
+      
     end
   end
 
   def current_user
-    #TODO ERROR FIXME
+    #TODO mock to simplify some flow
+    session[:user_id]||=User.first.id
     return nil unless session[:user_id]
-    @current_user ||= User.find_by_uid(session[:user_id])
+    @current_user ||= User.find_by_id(session[:user_id])    
   end
 end

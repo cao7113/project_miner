@@ -16,7 +16,7 @@ class UserSessionsController < ApplicationController
     end
 
     # Currently storing all the info
-    session[:user_id] = omniauth['uid']
+    session[:user_id] = user.id#omniauth['uid']
     
     flash[:notice] = "Successfully logged in"
     redirect_to root_path

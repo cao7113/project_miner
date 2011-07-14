@@ -2,7 +2,9 @@
 class ProjectsController < ApplicationController
   
   def index
+    logger.debug "====session user_id=#{session[:user_id]}"
     @projects = initialize_grid(Project, 
+      :conditions=>["user_id=?", session[:user_id]],
       :order => 'id',
       :order_direction => 'desc')
 
@@ -35,7 +37,7 @@ class ProjectsController < ApplicationController
   end
   
   def create
-    @project = Project.new(params[:project])
+    @project = Project.new(params[:project].merge(:user_id=>session[:user_id]))
 
     respond_to do |format|
       if @project.save

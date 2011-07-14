@@ -13,7 +13,7 @@
 <div id="nav">
 	<%=link_to "Index", root_path%> |
 	<%=link_to "Projects", projects_path%> |
-	<%=link_to "UseCases", use_cases_path%> |
+	<%=link_to "UseCases", use_cases_path(:project_id=>1)%> |
 	<%=link_to "NewCase", new_use_case_path%> |
 	<span>
 		<%if current_user %>	

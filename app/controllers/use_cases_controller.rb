@@ -1,9 +1,11 @@
 # coding: UTF-8
 class UseCasesController < ApplicationController
-  
+
   def index
+    #FIXME the way to get project_id 
+    session[:project_id]||=params['project_id']
     @use_cases = initialize_grid(UseCase, 
-      :conditions=>["user_id=?", session[:user_id]],
+      :conditions=>["project_id=?", session[:project_id]],
       :order => 'id',
       :order_direction => 'desc')
 
@@ -23,7 +25,7 @@ class UseCasesController < ApplicationController
   end
   
   def new
-    @use_case = UseCase.new
+    @use_case = UseCase.new(:project_id=>session['project_id'])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -68,8 +70,9 @@ class UseCasesController < ApplicationController
     @use_case.destroy
 
     respond_to do |format|
-      format.html { redirect_to(use_cases_path,:notice => "删除成功。") }
+      format.html { redirect_to(use_cases_path,:notice => "删除成功。。。") }
       format.json
     end
   end
+  
 end
